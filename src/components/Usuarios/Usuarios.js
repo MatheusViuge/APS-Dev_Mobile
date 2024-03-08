@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import AdicionarUsuario from '../AdicionarUsuario/AdicionarUsuario'
 import Usuario from '../Usuario/Usuario'
 
-function Usuarios(){
+function Usuarios() {
 
   const [usuarios, setUsuarios] = useState([])
   useEffect(() => {
@@ -32,12 +31,12 @@ function Usuarios(){
   const removerUsuario = usuario => {
     if (window.confirm(`Tem certeza que deseja remover "${usuario.nome} ${usuario.sobrenome}"?`)) {
 
-      fetch(`https://reqres.in/api/users/${usuario.id}`,{
-        method:'DELETE'
+      fetch(`https://reqres.in/api/users/${usuario.id}`, {
+        method: 'DELETE'
       })
         .then(resposta => {
-          if(resposta.ok){         
-          setUsuarios(usuarios.filter(x => x.id !== usuario.id))
+          if (resposta.ok) {
+            setUsuarios(usuarios.filter(x => x.id !== usuario.id))
           }
         })
     }
@@ -45,8 +44,6 @@ function Usuarios(){
 
   return (
     <>
-      <AdicionarUsuario adicionarUsuario={adicionarUsuario} />
-
       {usuarios.map(usuario => (
         <Usuario key={usuario.id}
           usuario={usuario}
