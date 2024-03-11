@@ -18,13 +18,14 @@ function AdicionarUsuario() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(usuario)
     })
-      .then(resposta => resposta.json())
-      .then(dados => {
-        setNome('')
-        setSobrenome('')
-        setEmail('')
+      .then(resposta => {
+        if(resposta.ok){
+          setNome('')
+          setSobrenome('')
+          setEmail('')
+          alert('Usuário cadastrado com sucesso!')
+        }
       })
-
   }
 
 
