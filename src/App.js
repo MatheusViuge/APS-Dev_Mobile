@@ -6,6 +6,7 @@ import Usuarios from './components/Usuarios/Usuarios'
 import AdicionarUsuario from './components/AdicionarUsuario/AdicionarUsuario';
 import Home from './components/Home/Home';
 import DetalhesUsuario from './components/DetalhesUsuario/DetalhesUsuarios';
+import EditarUsuario from './components/EditarUsuario/EditarUsuario';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/usuarios/:id/edit" element={<EditarUsuario />}/>
             <Route path="/usuarios/:id" element={<DetalhesUsuario />}/>
             <Route path="/usuarios" element={<Usuarios />} />
             <Route path="/adicionar" element={<AdicionarUsuario />} />

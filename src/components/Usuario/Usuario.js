@@ -11,6 +11,7 @@ function Usuario(props) {
         <li><strong>Nome:</strong> {props.usuario.nome} {props.usuario.sobrenome}</li>
         <li><strong>Email:</strong> {props.usuario.email}</li>
         <li><Link to={`/usuarios/${props.usuario.id}`}>Detalhes</Link></li>
+        <li><Link to={`/usuarios/${props.usuario.id}/edit`}>Editar</Link></li>
       </ul>
       <button onClick={props.removerUsuario}>&times;</button>
     </div>

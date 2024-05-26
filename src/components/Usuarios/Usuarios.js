@@ -24,9 +24,6 @@ function Usuarios() {
       })
   }, [])
 
-  const adicionarUsuario = usuario => {
-    setUsuarios(usuariosAtuais => [...usuariosAtuais, usuario])
-  }
 
   const removerUsuario = usuario => {
     if (window.confirm(`Tem certeza que deseja remover "${usuario.nome} ${usuario.sobrenome}"?`)) {
