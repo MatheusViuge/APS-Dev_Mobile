@@ -20,6 +20,7 @@ function AdicionarUsuario() {
     })
       .then(resposta => {
         if(resposta.ok){
+          console.log(resposta)
           setNome('')
           setSobrenome('')
           setEmail('')

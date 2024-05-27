@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import './EditarUsuario.css'
@@ -12,29 +12,19 @@ function EditarUsuario() {
   const [email, setEmail] = useState('')
 	const [usuario, setUsuario] = useState({})
 
-	useEffect(() => {
-    fetch(`https://reqres.in/api/users/${id}`)
-      .then((response) => response.json())
-      .then(dados => {
-        if (dados.data) {
-          setUsuario({
-            id: dados.data.id,
-            nome: dados.data.first_name,
-            sobrenome: dados.data.last_name,
-            email: dados.data.email,
-            foto: dados.data.avatar
-          })}});
-  }, [id]);
 
   const onSubmitHandler = event => {
     event.preventDefault()
-
-    const usuarios = usuario
+    setUsuario({
+      nome,
+      sobrenome,
+      email
+    })
 
     fetch(`https://reqres.in/api/users/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(usuarios)
+      body: JSON.stringify(usuario)
     })
       .then(resposta => {
         if(resposta.ok){
@@ -49,7 +39,7 @@ function EditarUsuario() {
 
   return (
     <div className="AdicionarUsuario">
-      <h2>Adicionar Usuário</h2>
+        <h2>Editar Usuário</h2>
       <form onSubmit={onSubmitHandler}>
         <div className="Linha">
           <div className="Coluna">

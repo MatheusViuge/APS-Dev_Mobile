@@ -33,7 +33,7 @@
 
 .App nav {
   padding: 0;
-  background-color: #ffe8f3;
+  background-color: #e5ebff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .14);
 }
 
@@ -53,15 +53,15 @@
 .App nav ul li a {
   display: block;
   padding: 1rem;
-  color: #da3c78;
+  color: #1e90ff;
   text-decoration: none;
 }
 
 .App nav ul li a:hover{
-  background-color: #ffbcd8;
+  background-color: #c9d8ff;
 }
 
 .App nav ul li a.active{
-  background-color: #ff6ca8;
+  background-color: #64a1ff;
   color: #ffffff;
 }
