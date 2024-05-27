@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/APS-Dev_Mobile/static/css/main.17dd01c3.css",
+    "main.js": "/APS-Dev_Mobile/static/js/main.cd8effd5.js",
+    "index.html": "/APS-Dev_Mobile/index.html",
+    "main.17dd01c3.css.map": "/APS-Dev_Mobile/static/css/main.17dd01c3.css.map",
+    "main.cd8effd5.js.map": "/APS-Dev_Mobile/static/js/main.cd8effd5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17dd01c3.css",
+    "static/js/main.cd8effd5.js"
+  ]
+}
