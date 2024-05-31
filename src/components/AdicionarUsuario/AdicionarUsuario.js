@@ -4,27 +4,31 @@ import './AdicionarUsuario.css'
 
 function AdicionarUsuario() {
 
+// Estados para armazenar os valores dos campos do formulário
   const [nome, setNome] = useState('')
   const [sobrenome, setSobrenome] = useState('')
   const [email, setEmail] = useState('')
 
+// Função para lidar com o envio do formulário
   const onSubmitHandler = event => {
-    event.preventDefault()
+    event.preventDefault()    // Previne o comportamento padrão do formulário de recarregar a página
 
+// Cria um objeto usuário com os valores dos campos
     const usuario = { nome, sobrenome, email }
 
+// Envia uma requisição POST para a API para adicionar um novo usuário
     fetch('https://reqres.in/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(usuario)
     })
       .then(resposta => {
-        if(resposta.ok){
-          console.log(resposta)
-          setNome('')
-          setSobrenome('')
-          setEmail('')
-          alert('Usuário cadastrado com sucesso!')
+        if(resposta.ok){  
+          console.log(resposta) // Log da resposta da API no console
+          setNome('') // Reseta o campo nome
+          setSobrenome('')  // Reseta o campo sobrenome
+          setEmail('')  // Reseta o campo email
+          alert('Usuário cadastrado com sucesso!')  // Alerta de sucesso
         }
       })
   }
@@ -33,7 +37,7 @@ function AdicionarUsuario() {
   return (
     <div className="AdicionarUsuario">
       <h2>Adicionar Usuário</h2>
-      <form onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}> {/* Associa a função de envio ao evento onSubmit do formulário*/}
         <div className="Linha">
           <div className="Coluna">
             <label>Nome</label>

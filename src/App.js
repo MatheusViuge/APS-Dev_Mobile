@@ -15,19 +15,19 @@ function App() {
         <header>
           <nav>
             <ul>
-              <li><NavLink to="/">Início</NavLink></li>
-              <li><NavLink to="/usuarios">Usuários Cadastrados</NavLink></li>
-              <li><NavLink to="/adicionar">Adicionar Usuário</NavLink></li>
+              <li><NavLink to="/APS-Dev_Mobile/">Início</NavLink></li>
+              <li><NavLink to="/APS-Dev_Mobile/usuarios">Usuários Cadastrados</NavLink></li>
+              <li><NavLink to="/APS-Dev_Mobile/adicionar">Adicionar Usuário</NavLink></li>
             </ul>
           </nav>
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/usuarios/:id/edit" element={<EditarUsuario />}/>
-            <Route path="/usuarios/:id" element={<DetalhesUsuario />}/>
-            <Route path="/usuarios" element={<Usuarios />} />
-            <Route path="/adicionar" element={<AdicionarUsuario />} />
+            <Route path="/APS-Dev_Mobile/" element={<Home />} />
+            <Route path="/APS-Dev_Mobile/usuarios/:id/edit" element={<EditarUsuario />}/>
+            <Route path="/APS-Dev_Mobile/usuarios/:id" element={<DetalhesUsuario />}/>
+            <Route path="/APS-Dev_Mobile/usuarios" element={<Usuarios />} />
+            <Route path="/APS-Dev_Mobile/adicionar" element={<AdicionarUsuario />} />
             <Route path="*" element={<PaginaNaoEncontrada />} />
           </Routes>
         </main>
